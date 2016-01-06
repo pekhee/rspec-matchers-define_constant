@@ -1,4 +1,4 @@
-module RspecMatcherDefineConstant
+module RSpecMatcherDefineConstant
   # Gem identity information.
   module Identity
     def self.name
@@ -6,7 +6,7 @@ module RspecMatcherDefineConstant
     end
 
     def self.label
-      "RspecMatcherDefineConstant"
+      "RSpecMatcherDefineConstant"
     end
 
     def self.version

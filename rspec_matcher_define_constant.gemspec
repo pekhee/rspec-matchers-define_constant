@@ -2,8 +2,8 @@ $LOAD_PATH.push File.expand_path("../lib", __FILE__)
 require "rspec_matcher_define_constant/identity"
 
 Gem::Specification.new do |spec|
-  spec.name = RspecMatcherDefineConstant::Identity.name
-  spec.version = RspecMatcherDefineConstant::Identity.version
+  spec.name = RSpecMatcherDefineConstant::Identity.name
+  spec.version = RSpecMatcherDefineConstant::Identity.version
   spec.platform = Gem::Platform::RUBY
   spec.authors = ["Pooyan Khosravi"]
   spec.email = ["pekhee@gmail.com"]
