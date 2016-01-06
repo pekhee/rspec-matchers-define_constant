@@ -8,8 +8,11 @@ Gem::Specification.new do |spec|
   spec.authors = ["Pooyan Khosravi"]
   spec.email = ["pekhee@gmail.com"]
   spec.homepage = "https://github.com//rspec_matcher_define_constant"
-  spec.summary = "TODO: Add gem summary here."
-  spec.description = "TODO: Add gem description here."
+  spec.summary = "RSpec matcher to make sure block defines constant"
+  spec.description =
+    "RSpec matcher define_constant. Runs block and tracks all defined constants
+  to make sure specified constant name gets defined. Removes defined constant
+  after expectation"
   spec.license = "MIT"
 
   if ENV["RUBY_GEM_SECURITY"] == "enabled"

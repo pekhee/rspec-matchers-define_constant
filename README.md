@@ -1,11 +1,10 @@
-# RspecMatcherDefineConstant
+# RSpec Matcher `define_constant(constant_name).of_type(Type)`
 
 [![Gem Version](https://badge.fury.io/rb/rspec_matcher_define_constant.svg)](http://badge.fury.io/rb/rspec_matcher_define_constant)
-[![Code Climate GPA](https://codeclimate.com/github//rspec_matcher_define_constant.svg)](https://codeclimate.com/github//rspec_matcher_define_constant)
-[![Code Climate Coverage](https://codeclimate.com/github//rspec_matcher_define_constant/coverage.svg)](https://codeclimate.com/github//rspec_matcher_define_constant)
-[![Gemnasium Status](https://gemnasium.com//rspec_matcher_define_constant.svg)](https://gemnasium.com//rspec_matcher_define_constant)
-[![Travis CI Status](https://secure.travis-ci.org//rspec_matcher_define_constant.svg)](https://travis-ci.org//rspec_matcher_define_constant)
-[![Patreon](https://img.shields.io/badge/patreon-donate-brightgreen.svg)](https://www.patreon.com/)
+[![Code Climate GPA](https://codeclimate.com/github/pekhee/rspec_matcher_define_constant.svg)](https://codeclimate.com/github/pekhee/rspec_matcher_define_constant)
+[![Code Climate Coverage](https://codeclimate.com/github/pekhee/rspec_matcher_define_constant/coverage.svg)](https://codeclimate.com/github/pekhee/rspec_matcher_define_constant)
+[![Gemnasium Status](https://gemnasium.com/pekhee/rspec_matcher_define_constant.svg)](https://gemnasium.com/pekhee/rspec_matcher_define_constant)
+[![Travis CI Status](https://secure.travis-ci.org/pekhee/rspec_matcher_define_constant.svg)](https://travis-ci.org/pekhee/rspec_matcher_define_constant)
 
 <!-- Tocer[start]: Auto-generated, don't remove. -->
 
@@ -26,22 +25,15 @@
 <!-- Tocer[finish]: Auto-generated, don't remove. -->
 
 # Features
+Makes sure block defines a constant and removes the constant after block is done.
 
 # Requirements
 
-0. [MRI 2.2.3](https://www.ruby-lang.org)
+0. [MRI 2.x](https://www.ruby-lang.org)
+1. [RSpec 3.x](http://rspec.info)
 
 # Setup
-
-For a secure install, type the following (recommended):
-
-    gem cert --add <(curl -Ls https://www.my-website.com/gem-public.pem)
-    gem install rspec_matcher_define_constant --trust-policy MediumSecurity
-
-NOTE: A HighSecurity trust policy would be best but MediumSecurity enables signed gem verification while
-allowing the installation of unsigned dependencies since they are beyond the scope of this gem.
-
-For an insecure install, type the following (not recommended):
+To install, type the following:
 
     gem install rspec_matcher_define_constant
 
@@ -50,6 +42,19 @@ Add the following to your Gemfile:
     gem "rspec_matcher_define_constant"
 
 # Usage
+
+    RSpec.describe "a block that defines a constant" do
+      subject do
+        proc do
+          Object.const_set "Stuff", 1
+        end
+      end
+
+      it "defines Stuff" do
+        expect { subject.call }.to define_constant "Stuff"
+        # Stuff is not defined here.
+      end
+    end
 
 # Tests
 
@@ -76,7 +81,7 @@ Read [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 # License
 
-Copyright (c) 2016 []().
+Copyright (c) 2016 [Pooyan Khosravi]().
 Read the [LICENSE](LICENSE.md) for details.
 
 # History
@@ -86,4 +91,4 @@ Built with [Gemsmith](https://github.com/bkuhlmann/gemsmith).
 
 # Credits
 
-Developed by [Pooyan Khosravi]() at []().
+Developed by [Pooyan Khosravi]().
