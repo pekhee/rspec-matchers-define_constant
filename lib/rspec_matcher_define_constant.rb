@@ -1,0 +1,1 @@
+require "rspec_matcher_define_constant/identity"
