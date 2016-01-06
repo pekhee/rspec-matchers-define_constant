@@ -2,6 +2,7 @@ PATH
   remote: .
   specs:
     rspec_matcher_define_constant (0.1.0)
+      rspec
 
 GEM
   remote: https://rubygems.org/
@@ -134,7 +135,6 @@ DEPENDENCIES
   pry-state
   rake
   rb-fsevent
-  rspec
   rspec_matcher_define_constant!
   rubocop
   terminal-notifier
