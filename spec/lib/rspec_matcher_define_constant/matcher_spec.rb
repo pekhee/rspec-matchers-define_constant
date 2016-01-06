@@ -67,4 +67,36 @@ describe "RSpecMatcherDefineConstant" do
       expect(&subject).not_to define_constant "Stuff"
     end
   end
+
+  context "constant previously defined" do
+    subject do
+      proc { :probe }
+    end
+
+    let(:const_name) { "SQDCTW" }
+
+    before(:each) { Object.const_set const_name, :probe }
+    after(:each)  { Object.send :remove_const, const_name }
+
+    it "rejects" do
+      expect(&subject).not_to define_constant const_name
+    end
+
+    it "won't remove const" do
+      define_constant(const_name).matches? subject
+      expect(Object.const_defined? const_name).to be_truthy
+    end
+  end
+
+  context "without a proc" do
+    subject { :probe }
+
+    it "raises argument error" do
+      matcher = define_constant "Stuff"
+
+      expect do
+        matcher.matches? subject
+      end.to raise_error ArgumentError
+    end
+  end
 end
