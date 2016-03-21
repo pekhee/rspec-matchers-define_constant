@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    rspec-matchers-define_constant (0.1.0)
+    rspec-matchers-define_constant (0.1.1)
       rspec
       rspec-matcher (>= 0.1.5, < 0.2.0)
 
