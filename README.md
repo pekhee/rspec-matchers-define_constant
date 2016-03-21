@@ -1,10 +1,10 @@
-# RSpec Matcher `define_constant(constant_name).of_type(Type)`
+# RSpec Matcher `define_constant`
 
-[![Gem Version](https://badge.fury.io/rb/rspec_matcher_define_constant.svg)](http://badge.fury.io/rb/rspec_matcher_define_constant)
-[![Code Climate GPA](https://codeclimate.com/github/pekhee/rspec_matcher_define_constant.svg)](https://codeclimate.com/github/pekhee/rspec_matcher_define_constant)
-[![Code Climate Coverage](https://codeclimate.com/github/pekhee/rspec_matcher_define_constant/coverage.svg)](https://codeclimate.com/github/pekhee/rspec_matcher_define_constant)
-[![Gemnasium Status](https://gemnasium.com/pekhee/rspec_matcher_define_constant.svg)](https://gemnasium.com/pekhee/rspec_matcher_define_constant)
-[![Travis CI Status](https://secure.travis-ci.org/pekhee/rspec_matcher_define_constant.svg)](https://travis-ci.org/pekhee/rspec_matcher_define_constant)
+[![Gem Version](https://badge.fury.io/rb/rspec-matchers-define_constant.svg)](http://badge.fury.io/rb/rspec-matchers-define_constant)
+[![Code Climate GPA](https://codeclimate.com/github/pekhee/rspec-matchers-define_constant.svg)](https://codeclimate.com/github/pekhee/rspec-matchers-define_constant)
+[![Code Climate Coverage](https://codeclimate.com/github/pekhee/rspec-matchers-define_constant/coverage.svg)](https://codeclimate.com/github/pekhee/rspec-matchers-define_constant)
+[![Gemnasium Status](https://gemnasium.com/pekhee/rspec-matchers-define_constant.svg)](https://gemnasium.com/pekhee/rspec-matchers-define_constant)
+[![Travis CI Status](https://secure.travis-ci.org/pekhee/rspec-matchers-define_constant.svg)](https://travis-ci.org/pekhee/rspec-matchers-define_constant)
 
 <!-- Tocer[start]: Auto-generated, don't remove. -->
 
@@ -35,11 +35,11 @@ Makes sure block defines a constant and removes the constant after block is done
 # Setup
 To install, type the following:
 
-    gem install rspec_matcher_define_constant
+    gem install rspec-matchers-define_constant
 
 Add the following to your Gemfile:
 
-    gem "rspec_matcher_define_constant"
+    gem "rspec-matchers-define_constant"
 
 # Usage
 
@@ -51,7 +51,7 @@ Add the following to your Gemfile:
       end
 
       it "defines Stuff" do
-        expect { subject.call }.to define_constant "Stuff"
+        expect { subject.call }.to define_constant("Stuff").of_type(Fixnum)
         # Stuff is not defined here.
       end
     end
