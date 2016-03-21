@@ -40,7 +40,7 @@ describe "RSpecMatcherDefineConstant" do
       subject do
         proc do
           Object.const_set "Stuff", :probe
-          fail
+          raise
         end
       end
 
@@ -53,7 +53,7 @@ describe "RSpecMatcherDefineConstant" do
           expect(true).to be_truthy # make sure this line runs
         end
 
-        expect(Object.const_defined? "Stuff").to be_falsy
+        expect(Object.const_defined?("Stuff")).to be_falsy
       end
     end
   end
@@ -84,7 +84,7 @@ describe "RSpecMatcherDefineConstant" do
 
     it "won't remove const" do
       define_constant(const_name).matches? subject
-      expect(Object.const_defined? const_name).to be_truthy
+      expect(Object.const_defined?(const_name)).to be_truthy
     end
   end
 

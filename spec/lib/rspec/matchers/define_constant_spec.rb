@@ -9,6 +9,6 @@ RSpec.describe "a block that defines a constant" do
 
   it "defines Stuff" do
     expect { subject.call }.to define_constant "Stuff"
-    # Stuff is not defined here.
+    expect { Stuff }.to raise_error NameError, /Stuff/
   end
 end

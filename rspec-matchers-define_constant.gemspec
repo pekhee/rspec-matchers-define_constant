@@ -1,13 +1,13 @@
 $LOAD_PATH.push File.expand_path("../lib", __FILE__)
-require "rspec_matcher_define_constant/identity"
+require "rspec/matchers/define_constant/identity"
 
 Gem::Specification.new do |spec|
-  spec.name = RSpecMatcherDefineConstant::Identity.name
-  spec.version = RSpecMatcherDefineConstant::Identity.version
+  spec.name = RSpec::Matchers::DefineConstant::Identity.name
+  spec.version = RSpec::Matchers::DefineConstant::Identity.version
   spec.platform = Gem::Platform::RUBY
   spec.authors = ["Pooyan Khosravi"]
   spec.email = ["pekhee@gmail.com"]
-  spec.homepage = "https://github.com/pekhee/rspec_matcher_define_constant"
+  spec.homepage = "https://github.com/pekhee/rspec-matchers-define_constant"
   spec.summary = "RSpec matcher to make sure block defines constant"
   spec.description =
     "RSpec matcher define_constant. Runs block and tracks all defined constants
@@ -21,7 +21,7 @@ Gem::Specification.new do |spec|
   end
 
   spec.add_dependency "rspec"
-  spec.add_dependency "rspec-matcher"
+  spec.add_dependency "rspec-matcher", ">= 0.1.5", "< 0.2.0"
 
   spec.add_development_dependency "rake"
   spec.add_development_dependency "gemsmith"
